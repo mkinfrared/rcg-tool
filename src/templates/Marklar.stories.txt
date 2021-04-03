@@ -1,0 +1,16 @@
+import { Meta, Story } from "@storybook/react";
+
+import { Marklar } from "./Marklar";
+import { MarklarProps } from "./Marklar.type";
+
+export default {
+  title: "UI/Marklar",
+  Component: Marklar
+} as Meta;
+
+const Template: Story<MarklarProps> = (args) => <Marklar {...args} />;
+const Default = Template.bind({});
+
+Default.args = {};
+
+export { Default };

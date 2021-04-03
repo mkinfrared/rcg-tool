@@ -1,0 +1,18 @@
+import { render } from "@testing-library/react";
+import React from "react";
+
+import Marklar from "./Marklar";
+
+describe("<Marklar />", () => {
+  const Component = <Marklar />;
+
+  it("should be defined", () => {
+    expect(Marklar).toBeDefined();
+  });
+
+  it("match the snapshot", () => {
+    const { container } = render(Component);
+
+    expect(container).toMatchSnapshot();
+  });
+});

@@ -1,0 +1,39 @@
+{
+  "ts-node": {
+    // these options are overrides used only by ts-node
+    // same as our --compilerOptions flag and our TS_NODE_COMPILER_OPTIONS environment variable
+    "compilerOptions": {
+      "module": "ES2015"
+    }
+  },
+  "compilerOptions": {
+    "jsx": "react",
+    "target": "es6",
+    "module": "commonjs",
+    "lib": ["dom", "es2017", "esnext"],
+    "sourceMap": true,
+    "outDir": "./lib",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": false,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "suppressExcessPropertyErrors": false,
+    "baseUrl": "src",
+    "declaration": true,
+    "types": ["node"],
+    "plugins": [
+      { "transform": "ts-transformer-imports" }
+    ]
+  },
+  "exclude": ["node_modules", "lib", "copyStaticAssets.ts"]
+}
