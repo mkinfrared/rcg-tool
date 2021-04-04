@@ -1,7 +1,6 @@
 import { render } from "@testing-library/react";
-import React from "react";
 
-import Marklar from "./Marklar";
+import { Marklar } from "./Marklar";
 
 describe("<Marklar />", () => {
   const Component = <Marklar />;
