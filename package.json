@@ -1,6 +1,6 @@
 {
   "name": "rcg-tool",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "main": "./lib/index.js",
   "bin": {
     "rcg": "./lib/index.js"
@@ -14,12 +14,13 @@
   },
   "scripts": {
     "start": "node lib/index.js",
-    "build": "ttsc && yarn copy",
+    "build": "yarn clean && ttsc && yarn copy",
     "copy": "ts-node copyStaticAssets.ts",
     "watch": "nodemon --exec lib/index.js",
     "build:watch": "ttsc -w",
     "prepare": "husky install",
-    "release": "standard-version && git commit -m"
+    "release": "standard-version && git commit -m",
+    "clean": "ts-node clean.ts"
   },
   "dependencies": {
     "chalk": "^4.1.0",
