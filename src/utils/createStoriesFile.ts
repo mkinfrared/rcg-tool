@@ -4,8 +4,9 @@ import { TEMPLATE } from "./constants";
 
 const createStoriesFile = async (dirName: string, input: string) => {
   const file = await readFile("Marklar.stories.txt");
+  const fixedFile = file.replace(/component:/i, "component:");
 
-  const value = file.replace(
+  const value = fixedFile.replace(
     'title: "UI/Marklar"',
     `title: "${dirName.toUpperCase()}/${input}"`
   );
