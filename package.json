@@ -1,6 +1,6 @@
 {
   "name": "rcg-tool",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "main": "./lib/index.js",
   "bin": {
     "rcg": "./lib/index.js"
