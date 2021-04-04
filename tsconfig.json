@@ -8,9 +8,9 @@
   },
   "compilerOptions": {
     "jsx": "react",
-    "target": "es6",
+    "target": "ES2015",
     "module": "commonjs",
-    "lib": ["dom", "es2017", "esnext"],
+    "lib": ["es2020"],
     "sourceMap": true,
     "outDir": "./lib",
     "moduleResolution": "node",
@@ -33,5 +33,6 @@
     "types": ["node"],
     "plugins": [{ "transform": "@zerollup/ts-transform-paths" }]
   },
-  "exclude": ["node_modules", "lib", "copyStaticAssets.ts"]
+  "include": ["src"],
+  "exclude": ["node_modules", "lib", "copyStaticAssets.ts", "clean.ts"]
 }
