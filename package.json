@@ -18,10 +18,10 @@
     "copy": "ts-node copyStaticAssets.ts",
     "watch": "nodemon --exec lib/index.js",
     "build:watch": "ttsc -w",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "release": "standard-version && git commit -m"
   },
   "dependencies": {
-    "boxen": "^5.0.0",
     "chalk": "^4.1.0",
     "yargs": "^16.2.0"
   },
