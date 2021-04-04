@@ -31,9 +31,7 @@
     "baseUrl": "src",
     "declaration": true,
     "types": ["node"],
-    "plugins": [
-      { "transform": "ts-transformer-imports" }
-    ]
+    "plugins": [{ "transform": "@zerollup/ts-transform-paths" }]
   },
   "exclude": ["node_modules", "lib", "copyStaticAssets.ts"]
 }
