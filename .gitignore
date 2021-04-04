@@ -147,3 +147,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+.husky/_
