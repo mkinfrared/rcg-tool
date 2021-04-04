@@ -1,1 +1,3 @@
 .Marklar {}
+
+.Story {}
