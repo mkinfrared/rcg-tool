@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/mkinfrared/react-component-generator/compare/v0.1.1...v0.1.5) (2021-04-04)
+
+
+### Bug Fixes
+
+* fix story meta ([#10](https://github.com/mkinfrared/react-component-generator/issues/10)) ([b12ab94](https://github.com/mkinfrared/react-component-generator/commit/b12ab94c5b241a814c2f3ce9000bb65f2a9a9911))
+
 ### [0.1.4](https://github.com/mkinfrared/react-component-generator/compare/v0.1.1...v0.1.4) (2021-04-04)
 
 
