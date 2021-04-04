@@ -6,7 +6,7 @@ import { MarklarProps } from "./Marklar.type";
 
 export default {
   title: "UI/Marklar",
-  Component: Marklar
+  component: Marklar
 } as Meta;
 
 const Template: Story<MarklarProps> = (args) => (
