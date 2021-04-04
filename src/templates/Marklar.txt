@@ -3,8 +3,8 @@ import { memo } from "react";
 import css from "./Marklar.module.scss";
 import { MarklarProps } from "./Marklar.type";
 
-const Marklar = ({ name = "Marklar" }: MarklarProps) => {
-  return <div className={css.Marklar}>{name} works!!</div>;
+const Marklar = ({ className }: MarklarProps) => {
+  return <div className={css.Marklar}>Marklar works!!</div>;
 };
 
 export { Marklar };
