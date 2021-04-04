@@ -1,6 +1,7 @@
 import { Meta, Story } from "@storybook/react";
 
 import { Marklar } from "./Marklar";
+import css from "./Marklar.module.scss";
 import { MarklarProps } from "./Marklar.type";
 
 export default {
@@ -8,7 +9,12 @@ export default {
   Component: Marklar
 } as Meta;
 
-const Template: Story<MarklarProps> = (args) => <Marklar {...args} />;
+const Template: Story<MarklarProps> = (args) => (
+  <div className={css.Story}>
+    <Marklar {...args} />
+  </div>
+);
+
 const Default = Template.bind({});
 
 Default.args = {};
