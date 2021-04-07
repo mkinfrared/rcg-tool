@@ -6,7 +6,10 @@ import { MarklarProps } from "./Marklar.type";
 
 export default {
   title: "UI/Marklar",
-  component: Marklar
+  component: Marklar,
+  parameters: {
+    componentSubtitle: 'Subtitle goes here'
+  }
 } as Meta;
 
 const Template: Story<MarklarProps> = (args) => (
@@ -18,5 +21,11 @@ const Template: Story<MarklarProps> = (args) => (
 const Default = Template.bind({});
 
 Default.args = {};
+
+Default.parameters = {
+  docs: {
+    storyDescription: 'Story description'
+  }
+};
 
 export { Default };

@@ -1,10 +1,11 @@
 import fs from "fs";
+import path from "path";
 import { promisify } from "util";
 
 import logger from "utils/logger";
 
 type Data = {
-  dirName: string;
+  dirNames: string[];
   compDir: string;
   fileName: string;
   ext: string;
@@ -14,7 +15,7 @@ type Data = {
 const writeFile = async ({
   compDir,
   content,
-  dirName,
+  dirNames,
   ext,
   fileName
 }: Data) => {
@@ -23,13 +24,18 @@ const writeFile = async ({
   const rootDir = process.cwd();
 
   try {
-    await mkdir(`${rootDir}/${dirName}`, { recursive: true });
+    await mkdir(path.join(rootDir, ...dirNames), { recursive: true });
 
-    await mkdir(`${rootDir}/${dirName}/${compDir}`, { recursive: true });
+    await mkdir(path.join(rootDir, ...dirNames, compDir), { recursive: true });
 
-    const path = `${rootDir}/${dirName}/${compDir}/${fileName}.${ext}`;
+    const filePath = path.join(
+      rootDir,
+      ...dirNames,
+      compDir,
+      `${fileName}.${ext}`
+    );
 
-    await write(path, content, "utf8");
+    await write(filePath, content, "utf8");
   } catch (e) {
     logger.error(e);
   }

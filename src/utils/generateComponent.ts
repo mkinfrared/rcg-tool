@@ -10,18 +10,18 @@ import writeFile from "utils/writeFile";
 const generateComponent = async (componentPath: string) => {
   logger.info("Generating component...");
 
-  let dirName = "components";
-  let inputName = "component";
+  const dirNames = componentPath.split("/");
+  const inputName = dirNames.pop() ?? "component";
 
-  const input = componentPath.split("/");
-
-  if (input.length > 1) {
-    [dirName, inputName] = input;
-  } else {
-    [inputName] = input;
+  if (!dirNames.length) {
+    dirNames.push("components");
   }
 
-  const fileName = inputName.charAt(0).toUpperCase() + inputName.slice(1);
+  const fileName = inputName
+    .split("-")
+    .map((chunk) => chunk.charAt(0).toUpperCase() + chunk.slice(1))
+    .join("");
+
   const compDir = fileName;
 
   try {
@@ -29,7 +29,7 @@ const generateComponent = async (componentPath: string) => {
 
     let data = await createTypeFile(fileName);
 
-    writeFile({ ...data, dirName, compDir });
+    writeFile({ ...data, dirNames, compDir });
 
     logger.success("Created type file");
 
@@ -37,7 +37,7 @@ const generateComponent = async (componentPath: string) => {
 
     data = await createStylesFile(fileName);
 
-    writeFile({ ...data, dirName, compDir });
+    writeFile({ ...data, dirNames, compDir });
 
     logger.success("Created styles file");
 
@@ -45,15 +45,15 @@ const generateComponent = async (componentPath: string) => {
 
     data = await createComponentFile(fileName);
 
-    writeFile({ ...data, dirName, compDir });
+    writeFile({ ...data, dirNames, compDir });
 
     logger.success("Created component file");
 
     logger.info("Creating stories file...");
 
-    data = await createStoriesFile(dirName, fileName);
+    data = await createStoriesFile(dirNames, fileName);
 
-    writeFile({ ...data, dirName, compDir });
+    writeFile({ ...data, dirNames, compDir });
 
     logger.success("Created stories file");
 
@@ -61,7 +61,7 @@ const generateComponent = async (componentPath: string) => {
 
     data = await createTestFile(fileName);
 
-    writeFile({ ...data, dirName, compDir });
+    writeFile({ ...data, dirNames, compDir });
 
     logger.success("Created test file");
 
@@ -71,7 +71,7 @@ const generateComponent = async (componentPath: string) => {
 
     logger.success("Created index file");
 
-    writeFile({ ...data, dirName, compDir });
+    writeFile({ ...data, dirNames, compDir });
 
     logger.success("DONE");
   } catch (e) {

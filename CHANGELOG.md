@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.7 (2021-04-07)
+
+
+### Features
+
+* add subtitle for story files ([510ba54](https://github.com/mkinfrared/rcg-tool/commit/510ba5477f3bdac13a83808608d8f7899dd30101)), closes [#3](https://github.com/mkinfrared/rcg-tool/issues/3)
+* create a component with any directory depth ([21b3b83](https://github.com/mkinfrared/rcg-tool/commit/21b3b83d3ac9f0d232af8cf3c9403493d478d033))
+* init ([7f81f1b](https://github.com/mkinfrared/rcg-tool/commit/7f81f1bfeba52718ed53f5b2b4aad7d66267cb9e))
+
 ### [0.1.6](https://github.com/mkinfrared/react-component-generator/compare/v0.1.1...v0.1.6) (2021-04-04)
 
 

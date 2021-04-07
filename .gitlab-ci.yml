@@ -1,0 +1,54 @@
+image: node:14.16.1-alpine
+
+# ### Define variables
+#
+variables:
+  # Name of yarn cache directory
+  YARN_CACHE: ".yarn"
+  BUILD: "lib"
+
+before_script:
+  - apk update && apk add git
+  - git --version
+  - node --version
+  - yarn --version
+  - yarn install --cache-folder $YARN_CACHE
+  - git config --global user.email ${GIT_EMAIL}
+  - git config --global user.name ${GIT_NAME}
+
+# Cache modules in between jobs
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - $YARN_CACHE
+    - $BUILD
+    - node_modules/
+
+stages:
+  - build
+  - lint
+  - test
+  - release
+
+build:
+  stage: build
+  script:
+    - yarn build
+
+lint:
+  stage: lint
+  script:
+    - yarn lint
+
+test:
+  stage: test
+  script:
+    - yarn test
+
+release:
+  stage: release
+  script:
+    - npm config set https://registry.npmjs.org/:_authToken ${NPM_TOKEN}
+    - npm publish --verbose
+  only:
+    - master

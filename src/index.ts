@@ -14,8 +14,6 @@ const start = () => {
     .demandOption(["component"], "Please provide a component name")
     .help().argv as { component: string };
 
-  console.log(process.cwd());
-
   generateComponent(options.component);
 };
 
