@@ -28,7 +28,6 @@ stages:
   - build
   - lint
   - test
-  - bump
   - release
 
 build:
@@ -45,14 +44,6 @@ test:
   stage: test
   script:
     - yarn test
-
-bump:
-  stage: bump
-  script:
-    - yarn bump
-    - git push
-  only:
-    - develop
 
 release:
   stage: release
