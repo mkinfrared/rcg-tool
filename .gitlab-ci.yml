@@ -48,7 +48,7 @@ test:
 release:
   stage: release
   script:
-    - npm config set -- 'https://registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+    - npm config set -- '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
     - npm publish --verbose
   only:
     - master
