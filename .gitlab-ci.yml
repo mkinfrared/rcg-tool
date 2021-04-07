@@ -39,7 +39,6 @@ lint:
   stage: lint
   script:
     - yarn lint
-    - ls -la
 
 test:
   stage: test
