@@ -13,6 +13,8 @@ before_script:
   - node --version
   - yarn --version
   - yarn install --cache-folder $YARN_CACHE
+  - git config --global user.email ${GIT_EMAIL}
+  - git config --global user.name ${GIT_NAME}
 
 # Cache modules in between jobs
 cache:
@@ -38,7 +40,6 @@ lint:
   stage: lint
   script:
     - yarn lint
-    - ls -la
 
 test:
   stage: test
@@ -49,6 +50,7 @@ bump:
   stage: bump
   script:
     - yarn bump
+    - git push
   only:
     - develop
 
