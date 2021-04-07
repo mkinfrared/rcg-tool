@@ -8,6 +8,8 @@ variables:
   BUILD: "lib"
 
 before_script:
+  - apk update && apk add git
+  - git --version
   - node --version
   - yarn --version
   - yarn install --cache-folder $YARN_CACHE
@@ -36,6 +38,7 @@ lint:
   stage: lint
   script:
     - yarn lint
+    - ls -la
 
 test:
   stage: test
