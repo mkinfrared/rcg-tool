@@ -9,7 +9,7 @@ describe("<Marklar />", () => {
     expect(Marklar).toBeDefined();
   });
 
-  it("match the snapshot", () => {
+  it("should match the snapshot", () => {
     const { container } = render(Component);
 
     expect(container).toMatchSnapshot();
