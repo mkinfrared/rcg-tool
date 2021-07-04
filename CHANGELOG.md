@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.8 (2021-07-04)
+
+
+### Features
+
+* init ([7f81f1b](https://github.com/mkinfrared/rcg-tool/commit/7f81f1bfeba52718ed53f5b2b4aad7d66267cb9e))
+
+
+### Bug Fixes
+
+* fix test description ([393b234](https://github.com/mkinfrared/rcg-tool/commit/393b234b10b67673f3c55b87f24a4b121fbb9dcf)), closes [#6](https://github.com/mkinfrared/rcg-tool/issues/6)
+
 ### 0.1.7 (2021-04-07)
 
 
