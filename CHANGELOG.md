@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.9](https://github.com/mkinfrared/rcg-tool/compare/v0.1.8...v0.1.9) (2021-07-25)
+
+
+### Bug Fixes
+
+* strings to use double quotes ([5e39303](https://github.com/mkinfrared/rcg-tool/commit/5e3930383aaa4b52d9a617da036a4676f9b26d69)), closes [#7](https://github.com/mkinfrared/rcg-tool/issues/7)
+
 ### 0.1.8 (2021-07-04)
 
 
